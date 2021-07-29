@@ -1,0 +1,30 @@
+openapi: "3.0.0"
+info:
+  description: "TThis is RubixT swagger"
+  version: "1.0.0"
+  title: "TruckYea!"
+servers:
+  - url: http://localhost:3000/api
+paths:
+  /trucks:
+    get:
+      tags:
+        - "Trucks"
+      responses:
+        "200":
+          description: "Success Response"
+    post:
+      tags:
+        - "Trucks"
+      requestBody:
+        description: "Register"
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                maxWeight:
+                  type: number
+      responses:
+        "201":
+          description: "Success Response"

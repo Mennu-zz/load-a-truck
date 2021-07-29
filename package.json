@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && tsc",
+    "start": "npm run build && node dist/app",
+    "dev": "ts-node src/app",
+    "test": "jest tests/",
+    "clean": "rm -rf dist"
   },
   "author": "",
   "license": "ISC",
@@ -16,16 +20,25 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.23.3",
+    "http-errors": "^1.8.0",
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
-    "lokijs": "^1.5.9",
+    "lokijs": "^1.5.12",
+    "mariadb": "^2.5.4",
     "mongoose": "^5.9.24",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.6.2",
+    "sequelize-auto": "^0.8.2",
+    "sequelize-typescript": "^2.1.0",
+    "supertest": "^6.1.4",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.5",
-    "jest": "^26.1.0",
-    "ts-jest": "^26.1.3",
+    "@types/http-errors": "^1.8.1",
+    "@types/jest": "^26.0.24",
+    "@types/uuid": "^8.3.1",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.6",
     "typescript": "^3.9.7"
   }
 }
